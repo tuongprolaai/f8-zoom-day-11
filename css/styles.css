@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: greenyellow;
+    color: white;
+    height: 50px;
+    font-size: 30px;
+}
