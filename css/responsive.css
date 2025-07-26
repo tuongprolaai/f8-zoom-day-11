@@ -1,0 +1,123 @@
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    max-width: 90%;
+    background-color: #fff;
+    z-index: 99;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+    overflow-y: auto;
+}
+
+.mobile-nav__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 98;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.header__nav-toggle-input:checked ~ .mobile-nav {
+    transform: translateX(0);
+}
+
+.header__nav-toggle-input:checked ~ .mobile-nav__overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2.4rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.mobile-nav__logo {
+    display: block;
+    margin: 20px auto 40px;
+    width: fit-content;
+}
+
+.header__toggle {
+    display: none;
+}
+
+@media (max-width: 1199.98px) {
+    .hero__decoration--brush,
+    .about__decoration--brush {
+        display: none;
+    }
+
+    .gap-70 {
+        --spacer: 0;
+    }
+    .accordion-item,
+    .accordion-item + .accordion-item::after,
+    .layout-col--right-470,
+    .layout-col--left-570 {
+        width: 100%;
+    }
+
+    .layout-row--asymmetric {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .mobile-nav .nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .mobile-nav .nav__list li {
+        width: 100%;
+    }
+
+    .mobile-nav .nav__list li a {
+        padding: 12px 0;
+        display: block;
+        font-size: 1.8rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 6px;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .mobile-nav .nav__list li a:hover {
+        background-color: #f0f0f0;
+    }
+
+    .header__toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2.4rem;
+        color: #0e1412;
+        cursor: pointer;
+        order: -1;
+        margin-right: auto;
+    }
+
+    .header__nav,
+    .header__logo-wrapper {
+        display: none;
+    }
+
+    .header__row {
+        justify-content: space-between;
+        align-items: center;
+    }
+}
